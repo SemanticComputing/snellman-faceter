@@ -1,0 +1,105 @@
+<div class="row">
+  <div id="pagination-buttons" class="col-sm-7">
+    <!-- Pagination -->
+    <ul uib-pagination
+      class="pagination"
+      max-size="5"
+      boundary-links="true"
+      rotate="false"
+      total-items="vm.totalCount"
+      ng-model="vm.pageNo"
+      ng-disabled="vm.isLoadingResults"
+      ng-change="vm.getPage()"
+      first-text="<<"
+      previous-text="<"
+      next-text=">"
+      last-text=">>">
+    </ul>
+  </div>
+</div>
+
+    <!-- Results view -->
+<div class="col-md-12">
+        <img src="images/loading-lg.gif" ng-show="vm.isLoadingResults" />
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Dokumentti</th>
+              <th>Päivämäärä</th>
+              <th>Tyyppi</th>
+              <th>Henkilöt</th>
+              <th>Paikat</th>
+              <th>Asiat</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="document in vm.page">
+              <td style="width:21%">
+                <p>
+                  <a ng-href="{{ document.source }}">{{ document.name }}
+                </p>
+              </td>
+<!--              <td>
+                <p>{{ document.date }}</p>
+              </td> -->
+              <td>
+                <p>
+                  <a ng-href="{{ document.bioLink }}">{{ document.date }}</a>
+                </p>
+              </td>
+              <td>
+                <p>{{ document.typeLabel }}</p>
+              </td>
+              <td> 
+                <p>
+                  <span ng-repeat="person in vm.makeArray(document.person)">
+			<span ng-switch="!!person.match">
+				<a ng-switch-when="true" uib-popover-template="'personTooltipTemplate.html'" popover-trigger="'mouseenter'" ng-href="{{ person.match }}">{{ person.label + ($last ? '' : '; ') }}</a>
+					<span ng-switch-when="false" uib-popover-template="'personTooltipTemplate.html'" popover-trigger="'mouseenter'">{{ person.label + ($last ? '' : '; ') }}</span>
+			</span>
+                  </span>
+                </p>
+              </td>
+
+<!--              <td>
+                <p>
+                  <span ng-repeat="person in vm.makeArray(document.person)"> 
+                    <span ng-switch="!!person.match">
+                      <a ng-switch-when="true" uib-popover-template="'personTooltipTemplate.html'" popover-trigger="'mouseenter'" ng-href="{{ person.match }}">{{ person.label + ($last ? '' : '; ') }}</a>
+                        <span ng-switch-when="false" <a uib-popover-template="'personTooltipTemplate.html'" popover-trigger="'mouseenter'">{{ person.label + ($last ? '' : '; ') }}</span>
+                    </span>
+                  </span>
+                </p>
+              </td> -->
+
+              <td> 
+                <p>
+                  <span ng-repeat="town in vm.makeArray(document.town)"> 
+                    <span ng-switch="!!town.match">
+                      <a ng-switch-when="true" ng-href="{{ town.match }}">{{ town.label + ($last ? '' : ', ') }}</a>
+                        <span ng-switch-when="false">{{ town.label + ($last ? '' : ', ') }}</span>
+                    </span>
+                  </span>
+                </p>
+              </td>             
+ <!--             <td>
+                <p>{{ document.placeLabel.join("; ") || document.placeLabel }}</p>
+              </td> -->
+              <td>
+                <p>
+                  <span ng-repeat="concept in vm.makeArray(document.concept)"> 
+                    <span ng-switch="!!concept.match">
+		                  <a ng-switch-when="true" ng-href="{{ concept.match }}">{{ concept.label + ($last ? '' : ', ') }}</a>
+                        <span ng-switch-when="false">{{ concept.label + ($last ? '' : ', ') }}</span>
+                    </span>
+                  </span>
+                </p>
+              </td>
+	      <td>
+                <p>{{ document.placeLabel.join("; ") || document.placeLabel }}</p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+</div>
+

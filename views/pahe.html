@@ -1,0 +1,45 @@
+<div class="container-fluid">
+
+	<div id="title-row" class="row">
+		<div class="panel panel-default">
+			<div class="panel-body">
+          			<h1>J. V. Snellmanin kootut teokset</h1>
+   			</div>
+   
+    		</div>
+  	</div>
+
+	<div class="row">
+	      <div class="col-md-3">
+		<a href="" ng-click="vm.removeFacetSelections()">  Poista kaikki valinnat</a>
+		<!--<seco-slider-facet data-options="vm.facets.date"></seco-slider-facet>-->
+		<seco-timespan-facet data-options="vm.facets.dateTime"></seco-timespan-facet>
+		<seco-text-facet data-options="vm.facets.text"></seco-text-facet>
+		<seco-hierarchy-facet data-options="vm.facets.place"></seco-hierarchy-facet>
+		<seco-basic-facet data-options="vm.facets.person"></seco-basic-facet>
+		<seco-basic-facet data-options="vm.facets.type"></seco-basic-facet>
+		<seco-basic-facet data-options="vm.facets.concept"></seco-basic-facet>
+		<seco-basic-facet data-options="vm.facets.correspondence"></seco-basic-facet>
+		<seco-basic-facet data-options="vm.facets.creator"></seco-basic-facet>
+	      </div>
+
+    <!-- Results column -->
+		<div class="col-md-9">
+
+			<div uib-alert class="alert-danger" ng-if="vm.error">
+				<p>{{ Error occurred }}:</p>
+				<p>{{ vm.error }}</p>
+			</div>
+
+			<img src="images/loading-lg.gif" ng-show="vm.isLoadingResults" />
+
+			<div id="result-options-row" class="row">
+				<div class="col-md-12">
+		  			<ui-view><ui-view>
+				</div>
+	      		</div>
+
+		</div>
+	</div>
+</div>
+

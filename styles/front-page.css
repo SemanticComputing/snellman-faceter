@@ -1,0 +1,166 @@
+/* ==========================================================================
+   Styles for WarSampo.fi service front page. Bootstrap is used as a basis.
+   Different application perspectives have CSS files of their own. .
+   ========================================================================== */
+
+.modal-content {
+	width: 650px;
+}
+.navbartitle {
+  color: white !important;
+  font-family: "Courier new";
+}
+
+* {
+    margin: 0;
+}
+
+html, body {
+    height: 100%;
+}
+.wrapper {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto -100px; /* the bottom margin is the negative value of the footer's height */
+}
+.footer, .push {
+    height: 100px; /* .push must be the same height as .footer */
+}
+
+.persbox, .exbox { // Front page boxes for perspectives
+    border: 0px solid;
+    margin: 5px;
+    border-radius: 5px;
+    word-wrap: break.word;
+    background: rgb(0, 0, 0);
+    color: #ffffff;
+}
+
+.persbox {
+    padding: 20px;
+    height: 150px;
+}
+
+.exbox {
+    padding: 15px;
+    min-height: 300px;
+}
+
+.pers-link, .ex-link {
+    text-decoration: none !important;
+}
+
+.persbox:hover {
+    background: rgb(0, 0, 0) !important;
+}
+
+.exbox h4, .exbox p {
+    background: black;
+    display: table;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.persbox#nav-events {
+
+    background: linear-gradient( rgba(177, 113, 26, 0.6), rgba(0, 0, 0, 0.8) ), url('../images/search.png');
+    background-size: cover;
+}
+
+.persbox#nav-maps {
+    background: linear-gradient( rgba(177, 113, 26, 0.6), rgba(0, 0, 0, 0.5) ), url('../images/map.png');
+    background-size: cover;
+}
+
+.persbox#nav-places {
+    background: linear-gradient( rgba(177, 113, 26, 0.6), rgba(0, 0, 0, 0.8) ), url('../images/places.png');
+    background-size: cover;
+}
+
+/* 2. rivi */
+
+.persbox#nav-statistics {
+    background: linear-gradient( rgba(177, 113, 26, 0.6), rgba(0, 0, 0, 0.5) ), url('../images/histo.png');
+    background-position: top, middle;
+    background-size: cover;
+}
+
+
+.persbox#nav-networks {
+    background: linear-gradient( rgba(177, 113, 26, 0.6), rgba(0, 0, 0, 0.8) ), url('../images/network.png');
+    background-size: cover;
+}
+
+.persbox#nav-relations {
+    background: linear-gradient( rgba(177, 113, 26, 0.6), rgba(0, 0, 0, 0.8) ), url('../images/bios-4-6.png');
+    background-position: top, middle;
+}
+
+/* 3. rivi */
+
+.persbox#nav-language {
+    background: linear-gradient( rgba(177, 113, 26, 0.6), rgba(0, 0, 0, 0.6) ), url('../images/language.png');
+    background-size: cover;
+}
+
+.koli-color {
+	color:rgb(210, 186, 13);
+}
+
+/* **********************************************
+
+
+
+.persbox#nav-photographs {
+    background: linear-gradient( rgba(177, 113, 26, 0.6), rgba(0, 0, 0, 0.6) ), url('../images/places.png');
+    background-position: 20% 0%;
+}
+
+.persbox#nav-cemeteries {
+    background: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) ), url('/images/nav/cemeteries.png');
+    background-position: top;
+}
+
+books1.jpg
+*/
+
+.img-copyright {
+  padding: 20px;
+  text-align: right;
+}
+
+#jumbo {
+	background: linear-gradient( rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.0) ), url('../images/books2.jpg'); 
+    background-size: cover;
+    background-repeat: no-repeat, repeat;
+    /* background-blend-mode: lighten; */
+    font-weight: bold;
+    color: black;
+    color: white;
+   /*  background: linear-gradient( to right, BurlyWood, LightGray ), url('bios.png'); */
+}
+
+body {
+
+}
+.demo-desc li {
+  min-height: 40px;
+}
+
+.play-button {
+  height: 40px;
+}
+
+.feedback-wrapper {
+	position: relative;
+	height: 900px;
+}
+
+.feedback-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
