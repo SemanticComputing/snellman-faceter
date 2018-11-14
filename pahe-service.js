@@ -37,13 +37,13 @@
         var facets = {
             text: {
                 facetId: 'name',
-                predicate:'<http://ldf.fi/snellman/hasContent>/<http://ldf.fi/snellman/hasText>',
+                predicate:'<http://ldf.fi/snellman/hasContent>/<http://ldf.fi/snellman/hasText> ',
                 enabled: true,
                 name: 'Haku tekstistä'
             },
             date: {
                 facetId: 'date',
-                predicate: '<http://purl.org/dc/elements/1.1/date>',
+                predicate: '<http://purl.org/dc/elements/1.1/date> ',
                 min: 1826,
                 max: 1886,
                 enabled: true,
@@ -51,7 +51,7 @@
             },
             dateTime: {
                 facetId: 'dateTime',
-                predicate: '<http://purl.org/dc/elements/1.1/date>',
+                predicate: '<http://purl.org/dc/elements/1.1/date> ',
 		startPredicate: '<http://purl.org/dc/elements/1.1/date>',
 		endPredicate: '<http://purl.org/dc/elements/1.1/date>',
 		min: '1826-01-01',
@@ -61,7 +61,7 @@
             },
             place: {
                 facetId: 'place',
-                predicate:'<http://purl.org/dc/elements/1.1/relation>',
+                predicate:'<http://purl.org/dc/elements/1.1/relation> ',
                 enabled: true,
                 name: 'Paikka',
                 specifier: '?value a <http://ldf.fi/snellman/Place> .',
@@ -71,7 +71,7 @@
             },
             type: {
                 facetId: 'type',
-                predicate:'<http://purl.org/dc/elements/1.1/type>',
+                predicate:'<http://purl.org/dc/elements/1.1/type> ',
                 enabled: true,
                 name: 'Tyyppi',
                 chart: true,
@@ -90,7 +90,7 @@
             concept: {
                 facetId: 'concept',
                 chart: true,
-                predicate:'<http://purl.org/dc/elements/1.1/relation>',
+                predicate:'<http://purl.org/dc/elements/1.1/relation> ',
                 specifier: '?value a <http://ldf.fi/snellman/AbstractConcept>',
                 enabled: true,
                 name: 'Asia',
@@ -98,7 +98,7 @@
 
             person: {
                 facetId: 'person',
-                predicate:'<http://purl.org/dc/elements/1.1/relation>',
+                predicate:'<http://purl.org/dc/elements/1.1/relation> ',
                 specifier: '?value a <http://xmlns.com/foaf/0.1/Person>',
                 enabled: true,
 		chart: true,
@@ -106,7 +106,7 @@
             },
             correspondence: {
                 facetId: 'correspondence',
-                predicate:'<http://ldf.fi/snellman/relatedCorrespondence>',
+                predicate:'<http://ldf.fi/snellman/relatedCorrespondence> ',
                 specifier: '?value a <http://ldf.fi/snellman/Correspondence>',
                 enabled: true,
                 name: 'Kirjeenvaihto',
@@ -114,7 +114,7 @@
             },
             creator: {
                 facetId: 'creator',
-                predicate:'<http://purl.org/dc/elements/1.1/creator>',
+                predicate:'<http://purl.org/dc/elements/1.1/creator> ',
                 enabled: true,
                 name: 'Kirjoittaja',
 		chart: true,
@@ -198,7 +198,7 @@
         '    ?concept__id skos:broadMatch ?concept__match . ' +
         '   }' +
         '   OPTIONAL { '+
-        '    ?id rdfs:seeAlso ?bioLink . ' +
+        '    ?id rdfs:seeAlso ?bioLink .  ' +
         '   }' +
         '  }' +
         ' }';
